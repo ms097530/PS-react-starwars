@@ -1,38 +1,60 @@
-.App {
+:root
+{
+  --spacing-1: 1rem;
+  --container-max-width: 800px;
+  --off-white: rgba(255, 255, 255, 0.856);
+}
+
+*
+{
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.App
+{
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  background-color: rgb(39, 36, 36);
+  color: var(--off-white)
+}
+
+.App__header
+{
+  background-color: rgba(10, 10, 10, 0.9);
+  color: var(--off-white);
+  padding: var(--spacing-1);
+}
+
+.App__loader
+{
+  padding: var(--spacing-1);
+}
+
+.App__cards-container
+{
+  padding: var(--spacing-1);
+  max-width: var(--container-max-width);
+  display: flex;
+  gap: var(--spacing-1);
+  flex-wrap: wrap;
+  margin-inline: auto;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-image: linear-gradient(0deg, rgb(78, 74, 74), rgb(94, 88, 88));
+  flex: 1;
 }
 
-.App-link {
-  color: #61dafb;
+.App__cards-container>*
+{
+  flex-shrink: 1;
+  flex-basis: calc((var(--container-max-width) - var(--spacing-1) * 3)/2);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.StarshipCard
+{
+  padding: 2rem;
+  background-color: rgba(15, 15, 15, 1);
+  color: var(--off-white);
 }
